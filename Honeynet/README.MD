@@ -25,3 +25,6 @@ grouping of related resources within a project, environment, or application, pro
 <p align="center">
 <img src="https://i.imgur.com/c9rE9QA.png" height="85%" width="85%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
+
+
+azure
