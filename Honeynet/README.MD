@@ -21,3 +21,7 @@ grouping of related resources within a project, environment, or application, pro
 - review and create
 
 -- the purpose is to let the VM be discoverable by any means necessary: TCP ping, SYN scan, ICMP ping. 
+
+<p align="center">
+<img src="https://i.imgur.com/c9rE9QA.png" height="85%" width="85%" alt="Creating Windows VM part 1 - Basics tab"/>
+</p>
