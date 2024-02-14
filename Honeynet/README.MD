@@ -51,7 +51,9 @@ Please consider using more restrictive rules whenever possible.
 </p>
 
 ## RDP - Remote Desktop Protocol
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c510d7d7-14f3-479e-9e1e-c376aed3c963
+
+[https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c510d7d7-14f3-479e-9e1e-c376aed3c963]
+
 logs - digitial documentation of actions a coputer/user 
 
 agent - category of software does something on behalf of user or system, software that has automation task that it does for you
