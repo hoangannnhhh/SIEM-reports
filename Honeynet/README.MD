@@ -1,4 +1,6 @@
-## Creating Virtual Machine
+## Creating Virtual Machines
+
+### Windows 10
 
 1) Create a resource group, I named mine RG-SOC.
     - Azure Resource Groups are logical 
@@ -24,6 +26,8 @@
 <p align="center">
 <img src="https://i.imgur.com/8iaZpsK.png" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
+
+### Linux - Ubuntu
 
 
 ### Network Security Groups
