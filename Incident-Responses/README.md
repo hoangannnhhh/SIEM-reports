@@ -3,6 +3,7 @@ hello
 
 
 
-Microsoft Incident response closing an incident
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/3837da0d-71c8-4ba7-bc0a-7812882b7cd6
+microsoft sentinel IR closing
+
+https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9153cae3-32b3-46f8-9dd4-43ba4607a9a0
 
