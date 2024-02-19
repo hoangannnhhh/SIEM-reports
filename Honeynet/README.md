@@ -193,36 +193,55 @@ add data source
 
 create microsoft sentinel  
 
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a9f74906-c33e-4d8b-a6b8-e0d6cd739b7f
+
+<details>
+    <summary>Creating Microsoft Sentinel Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a9f74906-c33e-4d8b-a6b8-e0d6cd739b7f</p>
+</details>
 
 
 create watchlist -- wwgeoip summarized.csv  
 
-
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/e8408e0d-582a-4dfc-acdc-ee37902ef0aa
-
-
+<details>
+    <summary>Creating Watchlist Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/e8408e0d-582a-4dfc-acdc-ee37902ef0aa</p>
+</details>
 
 analytics --> creat --> sentinel analytics rule KQL
-![1Microsoft-Sentinel-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/de543732-acfc-48b5-98ee-36bac94a7b1f)
+<details>
+    <summary>Sentinel Analytics Rule KQL Image</summary>
+    <p align="center">
+    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/de543732-acfc-48b5-98ee-36bac94a7b1f" height="200%" width="200%" alt="Sentinel Analytics Rule KQL"/>
+    </p>
+</details>
 
 ## Create Storage Account
 
-![Create-a-storage-account-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0acbbf52-9dee-440a-be06-2f8d38feca8a)
-
+<details>
+    <summary>Creating Storage Account Image</summary>
+    <p align="center">
+    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0acbbf52-9dee-440a-be06-2f8d38feca8a" height="200%" width="200%" alt="Creating Storage Account"/>
+    </p>
+</details>
 
 Diagnostic settings creation
 
-
-![1socstorage1-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/7c3f8784-c405-4c7a-8a3e-6bd24e1e713d)
-![2socstorage1-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c211be9a-3442-44b3-b3b8-10baee2b0634)
-![3Diagnostic-setting-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/232c3d3f-341f-47d3-8a26-5896e0cf17a1)
+<details>
+    <summary>Creating Diagnostics Settings Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/7c3f8784-c405-4c7a-8a3e-6bd24e1e713d" height="200%" width="200%" alt="1socstorage1-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c211be9a-3442-44b3-b3b8-10baee2b0634" height="200%" width="200%" alt="2socstorage1-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/232c3d3f-341f-47d3-8a26-5896e0cf17a1" height="200%" width="200%" alt="3Diagnostic-setting-Microsoft-Azure"/>
+</details>
 
 
 containers --- folder inside container -- diagnostic settings will report data plain logs on this "test" uploaded onto blob storage, view and edit:: this is a way alter document, this would report that the document has been altered, this is testing logs for documentation: since users will be ones who can alter documents 
-![1New-container-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/797cfae7-8fd2-4054-9dc1-9672d2d0bfec)
-![2Upload-blob-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/839494fe-3ec9-49de-b663-63695e8734d2)
-![3test-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/58f932f7-3c94-430a-8196-9add047884e2)
+
+<details>
+    <summary>Creating Containers Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/797cfae7-8fd2-4054-9dc1-9672d2d0bfec" height="200%" width="200%" alt="1New-container-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/839494fe-3ec9-49de-b663-63695e8734d2" height="200%" width="200%" alt="2Upload-blob-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/58f932f7-3c94-430a-8196-9add047884e2" height="200%" width="200%" alt="3test-Microsoft-Azure"/>
+</details>
 
 
 ## NSG Flow Logs
@@ -231,22 +250,27 @@ NSG Flow logs
 ![1Create-a-flow-log-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/621c8954-6500-47ec-8ea6-f71f77f82ec4)
 ![2Create-a-flow-log-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ec015c27-b6fb-4feb-ae7b-6561e27af42f)
 
-
+<details>
+    <summary>Creating NSG Flow Logs Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/621c8954-6500-47ec-8ea6-f71f77f82ec4" height="200%" width="200%" alt="1Create-a-flow-log-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ec015c27-b6fb-4feb-ae7b-6561e27af42f" height="200%" width="200%" alt="2Create-a-flow-log-Microsoft-Azure"/>
+</details>
 
 ## Microsoft Defender for Cloud
 
-![1Microsoft-Defender-for-Cloud-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/af45930e-8d0a-4d10-9ea5-412289de9dbc)
-![2Settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c9cdb205-690b-40d8-884f-f9572c86a5ad)
-![3Settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/83129709-c58a-40ba-b008-abb5785b5de0)
-![4Microsoft-Defender-for-Cloud-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/d59d212a-9458-4762-a0a0-a7abf0afa945)
-![5Settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/b5c9b7e1-a5cf-4113-9b35-49fe0072b67b)
-![6Settings-monitoring-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ad2f967a-e99b-4327-9b95-ce250a6b7cdf)
-![7Auto-provisioning-configuration-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/53849c16-0015-47a1-9e98-90d277ca29a4)
-![8Settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/932b6681-981b-49f1-b187-f7675b8491b5)
-![9Settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c79a68de-80d0-4923-805d-979cac6fdc00)
-![10Settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0212665a-0c68-4942-99a3-a8ec3bc01805)
-
-
+<details>
+    <summary>Microsoft Defender for Cloud Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/af45930e-8d0a-4d10-9ea5-412289de9dbc" height="200%" width="200%" alt="1Microsoft-Defender-for-Cloud-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c9cdb205-690b-40d8-884f-f9572c86a5ad" height="200%" width="200%" alt="2Settings-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/83129709-c58a-40ba-b008-abb5785b5de0" height="200%" width="200%" alt="3Settings-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/d59d212a-9458-4762-a0a0-a7abf0afa945" height="200%" width="200%" alt="4Microsoft-Defender-for-Cloud-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/b5c9b7e1-a5cf-4113-9b35-49fe0072b67b" height="200%" width="200%" alt="5Settings-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ad2f967a-e99b-4327-9b95-ce250a6b7cdf" height="200%" width="200%" alt="6Settings-monitoring-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/53849c16-0015-47a1-9e98-90d277ca29a4" height="200%" width="200%" alt="7Auto-provisioning-configuration-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/932b6681-981b-49f1-b187-f7675b8491b5" height="200%" width="200%" alt="8Settings-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c79a68de-80d0-4923-805d-979cac6fdc00" height="200%" width="200%" alt="9Settings-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0212665a-0c68-4942-99a3-a8ec3bc01805" height="200%" width="200%" alt="10Settings-Microsoft-Azure"/>
+</details>
 
 ## Monitor
 this is where you can view logs under activity logs
