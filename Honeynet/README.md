@@ -12,8 +12,10 @@
 - Select (Standard_E2ad_v5 - 2 vcpus, 16 GiB memory)
 - Set the admin account name and password
 
-![creating window vm](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9)
-
+<details>
+    <summary>Creating WindowsVM image</summary>
+    ![creating window vm](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9)
+</details>
 
 - Networking:
 - networking tab: The firewall will be open to the public internet, we will remove the default rules and create new inbound rule that will allow all incoming traffic. Create a new virtual network, I named it SOC-vnet
