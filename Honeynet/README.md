@@ -15,7 +15,7 @@
 <details>
     <summary>Creating WindowsVM image</summary>
     <p align="center">
-    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
+    <iframe src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
     </p>
 </details>
 
