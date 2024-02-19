@@ -1,3 +1,10 @@
+# Honeynet Build
+
+## Overview  
+This README provies a step-by-step guide on how to set up a honeynet using Windows 10 and Linux virtual machines on Azure. A honeynet is a network of intentionally vulnerable systems designed to attract and monitor malicious activities, allowing for the analysis of cyber threats in a controlled environment.  
+
+**Disclaimer:** Use this honeynet setup for educational and research purposes only. Engaging in any malicious activities is strictly prohibited.
+
 ## Creating Virtual Machines
 
 ### Windows 10
