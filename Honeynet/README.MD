@@ -332,3 +332,8 @@ this ECAIR file it is a type of file design to tigger antivirus software
     need to turn off virus protection   
     open ISE   
     set-location $env:userprofile\desktop
+
+<details>
+    <summary>ECAIR File Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0a5b0183-132d-4f88-ab57-6e48f6c913d3</p>
+</details>
