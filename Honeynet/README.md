@@ -100,11 +100,17 @@ Please consider using more restrictive rules whenever possible.
 
 ## RDP - Remote Desktop Protocol
 
+<!--
 <details>
     <summary>RDP Video</summary>
     <iframe width="560" height="315" src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8" alt="RDP Video"/>
 </details>
+-->
 
+<details>
+    <summary>RDP Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8</p>
+</details>
 
 logs - digitial documentation of actions a coputer/user 
 
