@@ -29,15 +29,21 @@
 
 -- the purpose is to let the VM be discoverable by any means necessary: TCP ping, SYN scan, ICMP ping. 
 
-![Create-a-virtual-machine-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/921012e4-863d-4c5b-b9a0-475a00aa92f6)
+<details>
+    <summary>Networking Configuration for WindowsVM</summary>
+    <p align="center">
+    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/921012e4-863d-4c5b-b9a0-475a00aa92f6" height="200%" width="200%" alt="Create-a-virtual-machine-Microsoft-Azure"/>
+    </p>
+</details>
 
-
+<!--
 <p align="center">
 <img src="https://i.imgur.com/gwmg2gt.png" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
 <p align="center">
 <img src="https://i.imgur.com/8iaZpsK.png" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
+-->
 
 ### Linux - Ubuntu
 ![Create-a-virtual-machine-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/07e51908-8aad-4771-8651-4250c5511b5a)
