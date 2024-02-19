@@ -21,13 +21,15 @@
 
 -- the purpose is to let the VM be discoverable by any means necessary: TCP ping, SYN scan, ICMP ping. 
 
+<details>
+<summary>Image</summary>
 <p align="center">
 <img src="https://i.imgur.com/gwmg2gt.png" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
 <p align="center">
 <img src="https://i.imgur.com/8iaZpsK.png" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
-
+</details>
 
 ### Network Security Groups
 - Firewall that acts as a security layer for azure resources within a virtual entwork: controlling inbound/outbound network traffic flow to and from the resources 
