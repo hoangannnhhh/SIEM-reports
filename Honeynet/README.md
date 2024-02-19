@@ -100,13 +100,6 @@ Please consider using more restrictive rules whenever possible.
 
 ## RDP - Remote Desktop Protocol
 
-<!--
-<details>
-    <summary>RDP Video</summary>
-    <iframe width="560" height="315" src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8" alt="RDP Video"/>
-</details>
--->
-
 <details>
     <summary>RDP Video</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8</p>
@@ -119,8 +112,11 @@ agent - category of software does something on behalf of user or system, softwar
 
 turning off firewall
 
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9887cc34-0fd3-456e-8ef4-1121d5e5ea8a
 
+<details>
+    <summary>Turning Off Firewall Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9887cc34-0fd3-456e-8ef4-1121d5e5ea8a</p>
+</details>
 
 wf.msc
 
@@ -132,10 +128,10 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security
 ```
 unerl
 
-
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/71fab93d-054f-4fca-a58d-e15a644dcf6e
-
-
+<details>
+    <summary>Edit Registry Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/71fab93d-054f-4fca-a58d-e15a644dcf6e</p>
+</details>
 
 ## LAW
 Log Analytics Workspace  
@@ -146,14 +142,18 @@ creating agents
     download folder  
     connect the agent to azure log analytics  
     
+<details>
+    <summary>Creating Log Analytics Workspace Windows Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4c5a1811-9008-4403-ab1c-ba7a950b2ffc</p>
+</details>
 
-
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4c5a1811-9008-4403-ab1c-ba7a950b2ffc
 
 ### Linux
 
-
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/bc4ad540-ee34-4c82-8f91-5da928a09630
+<details>
+    <summary>Creating Log Analytics Workspace Linux Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/bc4ad540-ee34-4c82-8f91-5da928a09630</p>
+</details>
 
 
 ## Data Collection Rule
@@ -165,7 +165,11 @@ Microsoft-Windows-Windows Firewall With Advanced Security/Firewall!*[System[(Eve
 
 
 
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/819d3212-4915-4b4d-8b9b-20d33535c9ed
+
+<details>
+    <summary>DCR video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/819d3212-4915-4b4d-8b9b-20d33535c9ed</p>
+</details>
 
 
 
