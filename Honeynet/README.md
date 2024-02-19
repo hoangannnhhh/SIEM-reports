@@ -14,8 +14,10 @@
 
 <details>
     <summary>Creating WindowsVM image</summary>
-    https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9
+    <b>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9</b>
 </details>
+
+
 
 - Networking:
 - networking tab: The firewall will be open to the public internet, we will remove the default rules and create new inbound rule that will allow all incoming traffic. Create a new virtual network, I named it SOC-vnet
