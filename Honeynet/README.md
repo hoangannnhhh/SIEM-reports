@@ -46,9 +46,14 @@
 -->
 
 ### Linux - Ubuntu
-![Create-a-virtual-machine-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/07e51908-8aad-4771-8651-4250c5511b5a)
-![2Create-a-virtual-machine-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/2fb935b5-871d-4de5-b08d-1c7bfa265386)
 
+<details>
+    <summary>Creating LinuxVM images</summary>
+    <p align="center>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/07e51908-8aad-4771-8651-4250c5511b5a height="200%" width="200%" alt="Creating LinuxVM"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/2fb935b5-871d-4de5-b08d-1c7bfa265386 height="200%" width="200%" alt="Creating LinuxVM"/>
+    </p>
+</details>
 
 ### Network Security Groups
 - Firewall that acts as a security layer for azure resources within a virtual entwork: controlling inbound/outbound network traffic flow to and from the resources 
