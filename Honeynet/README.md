@@ -247,9 +247,6 @@ containers --- folder inside container -- diagnostic settings will report data p
 ## NSG Flow Logs
 network security group  
 NSG Flow logs  
-![1Create-a-flow-log-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/621c8954-6500-47ec-8ea6-f71f77f82ec4)
-![2Create-a-flow-log-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ec015c27-b6fb-4feb-ae7b-6561e27af42f)
-
 <details>
     <summary>Creating NSG Flow Logs Images</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/621c8954-6500-47ec-8ea6-f71f77f82ec4" height="200%" width="200%" alt="1Create-a-flow-log-Microsoft-Azure"/>
@@ -276,26 +273,39 @@ NSG Flow logs
 this is where you can view logs under activity logs
 export the activity logs
 
-![1Monitor-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9fcfe27a-413a-4334-b06a-6da1d8516d40)
-![2Diagnostic-settings-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/59621859-dcd4-4e18-9e74-c0eece3f4d3d)
-![3Diagnostic-setting-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a564c58b-b277-4e00-9c56-bfd6fbf57be3)
+<details>
+    <summary>Creating Monitor Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9fcfe27a-413a-4334-b06a-6da1d8516d40" height="200%" width="200%" alt="1Monitor-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/59621859-dcd4-4e18-9e74-c0eece3f4d3d" height="200%" width="200%" alt="2Diagnostic-settings-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a564c58b-b277-4e00-9c56-bfd6fbf57be3" height="200%" width="200%" alt="3Diagnostic-setting-Microsoft-Azure"/>
+</details>
+
 
 ## Key Vault
 create a key vault  
-![1Key-vaults-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ce2e808d-a2b3-4b11-bc31-f4766f18bffb)
-![2Create-a-key-vault-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4f7ef00b-63e3-464d-ba4f-2388692d7945)
-![3Create-a-key-vault-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/2cbeb6bc-d608-4347-ba87-104db676f498)
 
+<details>
+    <summary>Creating Key Vault Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ce2e808d-a2b3-4b11-bc31-f4766f18bffb" height="200%" width="200%" alt="1Key-vaults-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4f7ef00b-63e3-464d-ba4f-2388692d7945" height="200%" width="200%" alt="2Create-a-key-vault-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/2cbeb6bc-d608-4347-ba87-104db676f498" height="200%" width="200%" alt="3Create-a-key-vault-Microsoft-Azure"/>
+</details>
 
 diagnostic settings  create one -- DS azure key vault send it to analytic workspace
-![KeyVault-SOC1-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/d426e6a7-552d-454f-9108-ba1aa1b969e2)
-![2Diagnostic-setting-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4e5b3e46-d6a0-43cd-97ec-f12e0761aa17)
+
+<details>
+    <summary>Creating Diagnostic Settings Azure Key Vault Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/d426e6a7-552d-454f-9108-ba1aa1b969e2" height="200%" width="200%" alt="1KeyVault-SOC1-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4e5b3e46-d6a0-43cd-97ec-f12e0761aa17" height="200%" width="200%" alt="2Diagnostic-setting-Microsoft-Azure"/>
+</details>
 
 generate secrets -- this is for one incident -- we will generate by showing secret 11 times
 
-![1KeyVault-SOC1-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/45f93770-c559-4ee0-a585-c4096c20dc90)
-![2Create-a-secret-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9d718be7-c618-448e-9f37-5b528a2a70fb)
-
+<details>
+    <summary>Generating Secrets Images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/45f93770-c559-4ee0-a585-c4096c20dc90" height="200%" width="200%" alt="1KeyVault-SOC1-Microsoft-Azure"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9d718be7-c618-448e-9f37-5b528a2a70fb" height="200%" width="200%" alt="2Create-a-secret-Microsoft-Azure"/>
+</details>
 
 ## microsoft sentinel workbooks
 
@@ -325,5 +335,8 @@ this ECAIR file it is a type of file design to tigger antivirus software
 
 
 
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0a5b0183-132d-4f88-ab57-6e48f6c913d3
 
+<details>
+    <summary>ECAIR File Video</summary>
+    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0a5b0183-132d-4f88-ab57-6e48f6c913d3</p>
+</details>
