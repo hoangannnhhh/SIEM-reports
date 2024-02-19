@@ -102,7 +102,7 @@ Please consider using more restrictive rules whenever possible.
 
 <details>
     <summary>RDP Video</summary>
-    https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8
+    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8" alt="RDP Video"/>
 </details>
 
 
