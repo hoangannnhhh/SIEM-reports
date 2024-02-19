@@ -50,8 +50,8 @@
 <details>
     <summary>Creating LinuxVM images</summary>
     <p align="center>
-        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/07e51908-8aad-4771-8651-4250c5511b5a height="200%" width="200%" alt="Creating LinuxVM"/>
-        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/2fb935b5-871d-4de5-b08d-1c7bfa265386 height="200%" width="200%" alt="Creating LinuxVM"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/07e51908-8aad-4771-8651-4250c5511b5a" height="200%" width="200%" alt="Creating LinuxVM"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/2fb935b5-871d-4de5-b08d-1c7bfa265386" height="200%" width="200%" alt="Creating LinuxVM"/>
     </p>
 </details>
 
@@ -75,22 +75,35 @@ Review this rule regularly and remove it as soon as it is no longer absolutely n
 
 Please consider using more restrictive rules whenever possible.
 
-<p align="center">
-<img src="https://i.imgur.com/HtNarQw.png[/img]" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
-</p>
+<details>
+    <summary>WindowsVM NSG image</summary>
+    <p align="center">
+    <img src="https://i.imgur.com/HtNarQw.png[/img]" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
+    </p>
+</details>
+
+
 
 
 ## Linux NSG
+
+<details>
+    <summary>LinuxVM NSG images</summary>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/345c0ddb-0cb2-4843-8765-77dc04ee4c78" height="200%" width="200%" alt="Creating LinuxVM"/>
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9a721629-6929-49db-91f9-665ea0e64cbb" height="200%" width="200%" alt="Creating LinuxVM"/>
+</details>
+
+<!--
 ![delete  ssh LinuxVM-nsg-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/345c0ddb-0cb2-4843-8765-77dc04ee4c78)
 ![Add-inbound-security-rule-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9a721629-6929-49db-91f9-665ea0e64cbb)
-
+-->
 
 ## RDP - Remote Desktop Protocol
 
-
-
-https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8
-
+<details>
+    <summary>RDP Video</summary>
+    https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8
+</details>
 
 
 logs - digitial documentation of actions a coputer/user 
