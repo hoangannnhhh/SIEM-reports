@@ -15,7 +15,7 @@
 <details>
     <summary>Creating WindowsVM image</summary>
     <p align="center">
-    <iframe src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
+    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
     </p>
 </details>
 
@@ -102,7 +102,7 @@ Please consider using more restrictive rules whenever possible.
 
 <details>
     <summary>RDP Video</summary>
-    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8" alt="RDP Video"/>
+    <iframe src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8" alt="RDP Video"/>
 </details>
 
 
