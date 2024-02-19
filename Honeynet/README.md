@@ -14,7 +14,7 @@
 
 <details>
     <summary>Creating WindowsVM image</summary>
-    ![creating window vm](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9)
+    https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9
 </details>
 
 - Networking:
