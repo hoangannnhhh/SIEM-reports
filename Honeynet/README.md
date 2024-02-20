@@ -1,40 +1,33 @@
-## Creating Virtual Machines
+# Honeynet Build
 
-### Windows 10
+## Overview  
+This README provies a step-by-step guide on how to set up a honeynet using Windows 10 and Linux virtual machines on Azure. There will be additional images and videos in each section for references. A honeynet is a network of intentionally vulnerable systems designed to attract and monitor malicious activities, allowing for the analysis of cyber threats in a controlled environment.  
 
-1) Create a resource group, I named mine RG-SOC.
-    - Azure Resource Groups are logical 
-    grouping of related resources within a project, environment, or application, providing simplified management, governance through policies and RBAC, and aid in cost tracking and allocation. 
-2) Name your Windows machine
-3) Select your region, I selected East US 2. 
-4) No infrastructure redudancy required. 
-5) Select the image type: Windows 10 Pro, version 22H2 - x64 Gen2  
-- Select (Standard_E2ad_v5 - 2 vcpus, 16 GiB memory)
-- Set the admin account name and password
+**Disclaimer:** Use this honeynet setup for educational and research purposes only. Engaging in any malicious activities is strictly prohibited.
 
+### Creating Virtual Machines
+
+**Configuring Windows 10 VM**  
+1) Navigate to the Azure portal, select new Virtual Machine 
+2) Create a resource group for streamlined resource management, governance, and cost tracking. 
+    <details><summary>More info on Azure Resource Groups</summary>
+    <p>Azure Resource Groups are logical 
+    grouping of related resources within a project, environment, or application, providing simplified management, governance through policies and RBAC, and aid in cost tracking and allocation. </p></details>
+3) Name the Windows machine, select your desired region, no infrastructure redudancy is required.
+4) Select the image type: Windows 10 Pro, version 22H2 - x64 Gen2.
+- Select the size: Standard_E2ad_v5 - 2 vcpus, 16 GiB memory.
+- Set the admin account name and password.
+5) Navigate to the Networking tab and create a new virtual network.
+    - The firewall will be open to the public internet and we will later remote the default rules and create new inbound rule that will allow all incoming traffic. 
+6) Review and Create.
 <details>
-    <summary>Creating WindowsVM image</summary>
+    <summary>Image: Creating WindowsVM</summary>
     <p align="center">
     <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/cfec8d69-e2ba-458f-97fe-a73ba0a82fb9" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
-    </p>
-</details>
-
-
-
-- Networking:
-- networking tab: The firewall will be open to the public internet, we will remove the default rules and create new inbound rule that will allow all incoming traffic. Create a new virtual network, I named it SOC-vnet
-- Monitoring 
-- disable boot diagnostics
-- review and create
-
--- the purpose is to let the VM be discoverable by any means necessary: TCP ping, SYN scan, ICMP ping. 
-
-<details>
-    <summary>Networking Configuration for WindowsVM</summary>
-    <p align="center">
     <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/921012e4-863d-4c5b-b9a0-475a00aa92f6" height="200%" width="200%" alt="Create-a-virtual-machine-Microsoft-Azure"/>
     </p>
-</details>
+</details>  
+
 
 <!--
 <p align="center">
@@ -45,8 +38,15 @@
 </p>
 -->
 
-### Linux - Ubuntu
-
+**Configuring Linux Ubuntu VM**  
+1) Navigate to Azure portal, select new Virtual Machine.
+2) Select the same resource group that you had created for WindowsVM.
+3) Name the Linux Machine, select the same region, and no infrastructure redudancy is required.
+4) Select the image type: Ubuntu Server 20.04 LTS - x64 Gen2.
+    - Select the size: Standard_DS1v2 - 1 vcpu, 3.5 GiB memory.
+    - Set the admin account name and password.
+5) Navigate to the Networking tab and select the same Virtual Network you created with the WindowsVM.
+6) Review and Create.
 <details>
     <summary>Creating LinuxVM images</summary>
     <p align="center>
@@ -56,39 +56,26 @@
 </details>
 
 ### Network Security Groups
-- Firewall that acts as a security layer for azure resources within a virtual entwork: controlling inbound/outbound network traffic flow to and from the resources 
-- Default inbound and outbound firewall rules: a first rule: RDP it is enabled by default for any port and any IP address
-- under inbound security rules: delete RDP rule 
-- now add new inbound rule:
-    
-    We will allow traffic on any port. We do this by using "*" 
-    
-⚠️ DANGER - EXTREMELY PERMISSIVE RULE ⚠️
+- The Firewall acts as a security layer for Azure resources within a virtual network: controlling inbound/outbound network traffic flow to and from the resources. 
+- The Default inbound and outbound firewall rules: RDP is enabled by default for any port and any IP address.
+1) Under inbound security rules: Delete RDP rule 
+2) Add new inbound rule:
+    - We will allow all traffic on any port. Add "*" to Designated Port Ranges box.
+    The purpose of this is to let the VM be discoverable by any means necessary: TCP ping, SYN scan, ICMP ping, etc. 
+    <details><summary>⚠️ DANGER - EXTREMELY PERMISSIVE RULE ⚠️</summary>
+    <p> This allows unrestricted inbound traffic from any source, any port, to any destination, any port, on any protocol. This rule is highly permissive and poses significant security risks. It should only be used temporarily for troubleshooting or in very specific, controlled scenarios with careful monitoring and risk assessment. Review this rule regularly and remove it as soon as it is no longer absolutely necessary. Please consider using more restrictive rules whenever possible.</p>
+    </details>
 
-Allows unrestricted inbound traffic from any source, any port, to any destination, any port, on any protocol.
-
-This rule is highly permissive and poses significant security risks.
-
-It should only be used temporarily for troubleshooting or in very specific, controlled scenarios with careful monitoring and risk assessment.
-
-Review this rule regularly and remove it as soon as it is no longer absolutely necessary.
-
-Please consider using more restrictive rules whenever possible.
 
 <details>
-    <summary>WindowsVM NSG image</summary>
+    <summary>Image: WindowsVM NSG </summary>
     <p align="center">
     <img src="https://i.imgur.com/HtNarQw.png[/img]" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
     </p>
 </details>
 
-
-
-
-## Linux NSG
-
 <details>
-    <summary>LinuxVM NSG images</summary>
+    <summary>Image: LinuxVM NSG </summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/345c0ddb-0cb2-4843-8765-77dc04ee4c78" height="200%" width="200%" alt="Creating LinuxVM"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9a721629-6929-49db-91f9-665ea0e64cbb" height="200%" width="200%" alt="Creating LinuxVM"/>
 </details>
@@ -98,42 +85,42 @@ Please consider using more restrictive rules whenever possible.
 ![Add-inbound-security-rule-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9a721629-6929-49db-91f9-665ea0e64cbb)
 -->
 
-## RDP - Remote Desktop Protocol
-
-<details>
-    <summary>RDP Video</summary>
+### RDP - Remote Desktop Protocol
+**Remote into WindowsVM**
+1) We will now remote into the WindowsVM for the first time. If you have windows, you can simply search "Remote Desktop Connection" in the search bar. If you have a Mac, you can download Microsoft Remote Desktop app in the App Store. 
+2) Enter in the public IP address of the WindowsVM and enter your credentials you had created when configuring the WindowsVM.
+    <details>
+    <summary>Video: RDP into WindowsVM</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/dd1ff80c-379e-4c40-88ff-a3b79bc38ed8</p>
-</details>
+    </details>
 
-logs - digitial documentation of actions a coputer/user 
+**Turning off Firewall inside WindowsVM**
+1) Search "wf.msc" in the search bar and select the application.
+2) Click on "Windows Defender Firewall Properties" and turn off the firewall for the Domain Profile, Private Profile, and Public Profile. 
+3) Apply the changes and click save. 
 
-agent - category of software does something on behalf of user or system, software that has automation task that it does for you
-    monitor agent takes the logs and going to aggregate to LAW --> microsoft sentinle filter them 
-
-turning off firewall
-
-
-<details>
+    <details>
     <summary>Turning Off Firewall Video</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9887cc34-0fd3-456e-8ef4-1121d5e5ea8a</p>
-</details>
-
-wf.msc
+    </details>  
 
 
-Edit registry
-- Registry Editor
-```
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security
-```
-unerl
-
+**Edit Registry Editor**
+- The Registry Editor - Regedit, is a tool in Microsoft Windows OS that allows users to view and edit the Windows Registry, which is a hierachial database that stores configuration settings and options. 
+- We will be configuring the security event log by adding the Network Service account full control for the Log Analytics Workspace agent to have access to the registry keys.
+1) Navigate to Registry Editor by searching in the search bar.
+2) Input the registry key to the registry path and open the properties to access Permissions for Security.
+    ```
+    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security
+    ```
+3) Add a Group - iinput "NETWORK SERVICE" and allow full control. 
+4) Apply and save the changes. 
 <details>
     <summary>Edit Registry Video</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/71fab93d-054f-4fca-a58d-e15a644dcf6e</p>
 </details>
 
-## LAW
+### Log Analytics Workspace
 Log Analytics Workspace  
 Create a law-soc  
 creating agents
@@ -141,7 +128,9 @@ creating agents
     microsoft edge in your VM and paste it in the browser, it will download and then run exe  
     download folder  
     connect the agent to azure log analytics  
-    
+logs - digitial documentation of actions a coputer/user 
+agent - category of software does something on behalf of user or system, software that has automation task that it does for you
+    monitor agent takes the logs and going to aggregate to LAW --> microsoft sentinle filter them 
 <details>
     <summary>Creating Log Analytics Workspace Windows Video</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4c5a1811-9008-4403-ab1c-ba7a950b2ffc</p>
