@@ -121,28 +121,37 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 </details>
 
 ### Log Analytics Workspace
-Log Analytics Workspace  
-Create a law-soc  
-creating agents
-    download windows agent 64 bit
-    microsoft edge in your VM and paste it in the browser, it will download and then run exe  
-    download folder  
-    connect the agent to azure log analytics  
-logs - digitial documentation of actions a coputer/user 
-agent - category of software does something on behalf of user or system, software that has automation task that it does for you
-    monitor agent takes the logs and going to aggregate to LAW --> microsoft sentinle filter them 
-<details>
+- The purpose of Log Analytics Workspace (LAW) is to ingest the logs from the virtual machine into Microsoft Sentinel using the LAW agent
+- Logs are digital documentation of actions on a computer/user, the agent is a category of software that does something on behalf of the user/system
+    - the monitor agent will take the logs on the VM and will aggregate to LAW and microsoft sentinel will filter the logs. 
+
+1) Navigate to LAW in the Azure portal
+2) Create a new LAW and add the workspace in the same resource group you have for the VM. 
+3) Name your workspace and place it in the same region. 
+4) Review and Create. 
+
+**LAW WindowsVM**  
+1) Once the LAW is created, navigate to the Agents section under Settings of the LAW.
+2) Under the Windows server there is a Log Analytics agent instruction, copy the link to "Download Windows Agent (64_bit)" and switch to the WindowsVM. 
+3) Paste the copied link into a browser and it will automatically download a setup.exe. 
+4) Run the downloaded setup.exe and make sure the "Connect the agent to Azure Log Analytics (OHS)" is checked. 
+5) The agent setup will ask for the Workspace ID and Workspace Key, which is in the Azure portal
+6) Install and Finish. Your agent is now on the WindowsVM.
+    <details>
     <summary>Creating Log Analytics Workspace Windows Video</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4c5a1811-9008-4403-ab1c-ba7a950b2ffc</p>
-</details>
+    </details>
 
-
-### Linux
-
-<details>
+**LAW LinuxVM**
+1) In the Agents section under Settings of LAW, there is a tab for Linux Server. 
+2) There is a Log Analytics agent instruction, copy the "Download and onboard agent for Linux". 
+3) SSH into the Linux machine via Powershell - "SSH username@PUBLIC_IP_Addr_LinuxVM
+4) Enter your password for your LinuxVM and paste the wget information.
+5) After the agent has been added, you can enter "exit" to disconnect from you LinuxVM. 
+    <details>
     <summary>Creating Log Analytics Workspace Linux Video</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/bc4ad540-ee34-4c82-8f91-5da928a09630</p>
-</details>
+    </details>
 
 
 ## Data Collection Rule
