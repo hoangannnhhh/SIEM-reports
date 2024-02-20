@@ -155,19 +155,16 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 
 
 ## Data Collection Rule
+- Data Collection Rules are designed to simplify the process of configuring and managing data collection, by defining configurations centrally on how data is collected across multiple resources. 
 ```
-Microsoft-Windows-Windows Defender/Operational!*[System[(EventID=1116 or EventID=1117)]]
-Microsoft-Windows-Windows Firewall With Advanced Security/Firewall!*[System[(EventID=2003)]]
+- Microsoft-Windows-Windows Defender/Operational!*[System[(EventID=1116 or EventID=1117)]]
+- Microsoft-Windows-Windows Firewall With Advanced Security/Firewall!*[System[(EventID=2003)]]
 ```
 1:30:00 - jan 17 2024
-
-
-
-
-<details>
-    <summary>DCR video</summary>
+    <details>
+    <summary>Video: Data Collection Rules</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/819d3212-4915-4b4d-8b9b-20d33535c9ed</p>
-</details>
+    </details>
 
 
 
