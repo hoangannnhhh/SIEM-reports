@@ -6,7 +6,7 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 **Disclaimer:** Use this honeynet setup for educational and research purposes only. Engaging in any malicious activities is strictly prohibited.
 
 ### Creating Virtual Machines
-
+---
 **Configuring Windows 10 VM**  
 1) Navigate to the Azure portal, select new Virtual Machine 
 2) Create a resource group for streamlined resource management, governance, and cost tracking. 
@@ -85,7 +85,8 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 ![Add-inbound-security-rule-Microsoft-Azure](https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9a721629-6929-49db-91f9-665ea0e64cbb)
 -->
 
-### RDP - Remote Desktop Protocol
+### RDP - Remote Desktop Protocol 3389
+---
 **Remote into WindowsVM**
 1) We will now remote into the WindowsVM for the first time. If you have windows, you can simply search "Remote Desktop Connection" in the search bar. If you have a Mac, you can download Microsoft Remote Desktop app in the App Store. 
 2) Enter in the public IP address of the WindowsVM and enter your credentials you had created when configuring the WindowsVM.
@@ -121,6 +122,7 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 </details>
 
 ### Log Analytics Workspace
+---
 - The purpose of Log Analytics Workspace (LAW) is to ingest the logs from the virtual machine into Microsoft Sentinel using the LAW agent
 - Logs are digital documentation of actions on a computer/user, the agent is a category of software that does something on behalf of the user/system
     - the monitor agent will take the logs on the VM and will aggregate to LAW and microsoft sentinel will filter the logs. 
@@ -138,7 +140,7 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 5) The agent setup will ask for the Workspace ID and Workspace Key, which is in the Azure portal
 6) Install and Finish. Your agent is now on the WindowsVM.
     <details>
-    <summary>Creating Log Analytics Workspace Windows Video</summary>
+    <summary>Video: Adding LAW Agent to WindowsVM</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4c5a1811-9008-4403-ab1c-ba7a950b2ffc</p>
     </details>
 
@@ -149,90 +151,103 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 4) Enter your password for your LinuxVM and paste the wget information.
 5) After the agent has been added, you can enter "exit" to disconnect from you LinuxVM. 
     <details>
-    <summary>Creating Log Analytics Workspace Linux Video</summary>
+    <summary>Video: Adding LAW Agent to LinuxVM</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/bc4ad540-ee34-4c82-8f91-5da928a09630</p>
     </details>
 
 
-## Data Collection Rule
+### Data Collection Rules
+---
 - Data Collection Rules are designed to simplify the process of configuring and managing data collection, by defining configurations centrally on how data is collected across multiple resources. 
-```
-- Microsoft-Windows-Windows Defender/Operational!*[System[(EventID=1116 or EventID=1117)]]
-- Microsoft-Windows-Windows Firewall With Advanced Security/Firewall!*[System[(EventID=2003)]]
-```
-1:30:00 - jan 17 2024
-    <details>
+1) Navigate to the Data Collection Rules and create a new DCR. 
+2) Give your DCR a rule name, put the DCR in the same resource group, ensure the region is in the same region, and select "All" for the Platform Type. 
+3) Under the Resource tab, select "Add resources" and chose both LinuxVM and WindowsVM. 
+4) Under the Collect and Deliver tab, click on "Add data source"
+    - Select Linux Syslog under Data source type and only allow Log_Auth to have LOG_DEBUG. All other Facilities can be changed to none. Add the data source.
+    - Select Windows Event Logs under Data source type and click on information, Audit sucess, and Audit failure under the basic tab. In the custom tab, add these two custom event logs. Add the data source.
+        <details><summary>Custom Event Logs</summary>
+        Microsoft-Windows-Windows Defender/Operational!*[System[(EventID=1116 or EventID=1117)]]    
+        
+        Microsoft-Windows-Windows Firewall With Advanced Security/Firewall!*[System[(EventID=2003)]]
+        </details>
+5) Review and Create the Data Collection Rule.
+     <details>
     <summary>Video: Data Collection Rules</summary>
     <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/819d3212-4915-4b4d-8b9b-20d33535c9ed</p>
     </details>
 
 
+### Microsoft Sentinel
+---
+- Microsoft Sentinel is a cloud-native SIEM (Security Information and Event Mangement) and SOAR (Security, Orchestration, Automation, and Response) solution provided by Microsoft, it is designed to help detect, respond to, and mitigate cyberseucrity threats. 
 
+**Create Microsoft Sentinel**
+1) Navigate to Microsoft Sentinel via the search bar. 
+2) Click on "Create Microsoft Sentinel"
+3) Select the workspace we created earlier. 
+4) Click on the Add button at the bottom 
+    <details>
+     <summary>Video: Creating Microsoft Sentinel</summary>
+        <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a9f74906-c33e-4d8b-a6b8-e0d6cd739b7f</p>
+    </details>
 
-DCR-SOC
-RG-SOC
-East US2
-ALL
+**Create Watchlist**
+- A watchlist is a list of data you import from external source, the data can be relevant to the security analysis, which in this case we will be able to look at a world map to see the different places in the world via IP address that attempts malicious acivities on the VMs.
+1) Nacigate to Watchlist under the Content Management in Microsoft Sentinel. 
+2) Create a new watchlist and name the watchlist "geoip" and name the Alias as "geoip".
+3) In the source tab: upload the geoip-summarized.csv file and select "network" for the SearchKey
+4) Review and Create. 
+    <details>
+     <summary>Video: Creating Watchlist</summary>
+        <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/e8408e0d-582a-4dfc-acdc-ee37902ef0aa</p>
+    </details>
 
-next resources
-add resources: linuxvm and windowsvm
-
-next collect and deliver:
-add data source
-    data source: linux syslog - log auth: log debug
-    data source: windows event logs : CUSTOM
-
-
-
-## Microsoft Sentinel
-
-create microsoft sentinel  
-
-
-<details>
-    <summary>Creating Microsoft Sentinel Video</summary>
-    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a9f74906-c33e-4d8b-a6b8-e0d6cd739b7f</p>
-</details>
-
-
-create watchlist -- wwgeoip summarized.csv  
-
-<details>
-    <summary>Creating Watchlist Video</summary>
-    <p>https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/e8408e0d-582a-4dfc-acdc-ee37902ef0aa</p>
-</details>
-
-analytics --> creat --> sentinel analytics rule KQL
-<details>
-    <summary>Sentinel Analytics Rule KQL Image</summary>
+**Creating Sentinel Analytics KQL Rules**
+- Sentinel Analytics involves using advance analytics, machine learning, and AI to enhance threat detection, response, and investigation capabilities.
+1) Within Microsoft Sentinel, navigate to Analytics under the Configuration section. 
+2) Select the import option on the top section. 
+3) Import the KQL file for the custom alerts. 
+    <details>
+    <summary>Image: Sentinel Analytics Rule KQL</summary>
     <p align="center">
     <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/de543732-acfc-48b5-98ee-36bac94a7b1f" height="200%" width="200%" alt="Sentinel Analytics Rule KQL"/>
     </p>
-</details>
+    </details>
 
-## Create Storage Account
+### Storage Account
+---
+- Azure storage account is a highly durable, available, and scalable cloud storage solution. The account is the container for storage services and acts as a unique namespace for the data it holds. 
+- In this project, we will utilize the storage account for blob storage, which is designed for storing massive amounts of unstructured data - specifically logs from the VMs. 
 
-<details>
-    <summary>Creating Storage Account Image</summary>
-    <p align="center">
-    <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0acbbf52-9dee-440a-be06-2f8d38feca8a" height="200%" width="200%" alt="Creating Storage Account"/>
-    </p>
-</details>
+**Creating Storage Account**
+1) In the search bar, search for Storage Accounts.
+2) Click on Create a Storage Account. 
+3) Add the same resource group we have been using, name the storage account, and place the storage account in the same region. 
+4) Review and Create. 
+    <details>
+        <summary>Image: Creating Storage Account</summary>
+        <p align="center">
+        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/0acbbf52-9dee-440a-be06-2f8d38feca8a" height="200%" width="200%" alt="Creating Storage Account"/>
+        </p>
+    </details>
 
-Diagnostic settings creation
-
-<details>
-    <summary>Creating Diagnostics Settings Images</summary>
-        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/7c3f8784-c405-4c7a-8a3e-6bd24e1e713d" height="200%" width="200%" alt="1socstorage1-Microsoft-Azure"/>
-        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c211be9a-3442-44b3-b3b8-10baee2b0634" height="200%" width="200%" alt="2socstorage1-Microsoft-Azure"/>
-        <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/232c3d3f-341f-47d3-8a26-5896e0cf17a1" height="200%" width="200%" alt="3Diagnostic-setting-Microsoft-Azure"/>
-</details>
+**Diagnostic Settings Creation**
+- The Diagnostic Settings for a storage account allows you to configure and route diagnostic data from the storage account to a different destination for monitoring, analysis, and troubleshooting. Diagnostic Settings help you capture telemetry and logs related to the performance, operations, and security of your Azure Storage account.
+1) In the storage account, navigate to Diagnostic Settings under Monitoring and select the blob storage account. 
+2) Click on Add diagnostic settings.
+3) Name the Diagnostic Setting, click on audit, select the Log Analytics Workspace that we created earlier, and save the configuration. 
+    <details>
+    <summary>Images: Creating Diagnostics Settings</summary>
+            <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/7c3f8784-c405-4c7a-8a3e-6bd24e1e713d" height="200%" width="200%" alt="1socstorage1-Microsoft-Azure"/>
+            <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c211be9a-3442-44b3-b3b8-10baee2b0634" height="200%" width="200%" alt="2socstorage1-Microsoft-Azure"/>
+            <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/232c3d3f-341f-47d3-8a26-5896e0cf17a1" height="200%" width="200%" alt="3Diagnostic-setting-Microsoft-Azure"/>
+    </details>
 
 
 containers --- folder inside container -- diagnostic settings will report data plain logs on this "test" uploaded onto blob storage, view and edit:: this is a way alter document, this would report that the document has been altered, this is testing logs for documentation: since users will be ones who can alter documents 
 
 <details>
-    <summary>Creating Containers Images</summary>
+    <summary>Images: Creating Containers</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/797cfae7-8fd2-4054-9dc1-9672d2d0bfec" height="200%" width="200%" alt="1New-container-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/839494fe-3ec9-49de-b663-63695e8734d2" height="200%" width="200%" alt="2Upload-blob-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/58f932f7-3c94-430a-8196-9add047884e2" height="200%" width="200%" alt="3test-Microsoft-Azure"/>
@@ -243,7 +258,7 @@ containers --- folder inside container -- diagnostic settings will report data p
 network security group  
 NSG Flow logs  
 <details>
-    <summary>Creating NSG Flow Logs Images</summary>
+    <summary>Images: Creating NSG Flow Logs</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/621c8954-6500-47ec-8ea6-f71f77f82ec4" height="200%" width="200%" alt="1Create-a-flow-log-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/ec015c27-b6fb-4feb-ae7b-6561e27af42f" height="200%" width="200%" alt="2Create-a-flow-log-Microsoft-Azure"/>
 </details>
@@ -251,7 +266,7 @@ NSG Flow logs
 ## Microsoft Defender for Cloud
 
 <details>
-    <summary>Microsoft Defender for Cloud Images</summary>
+    <summary>Images: Microsoft Defender for Cloud</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/af45930e-8d0a-4d10-9ea5-412289de9dbc" height="200%" width="200%" alt="1Microsoft-Defender-for-Cloud-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/c9cdb205-690b-40d8-884f-f9572c86a5ad" height="200%" width="200%" alt="2Settings-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/83129709-c58a-40ba-b008-abb5785b5de0" height="200%" width="200%" alt="3Settings-Microsoft-Azure"/>
@@ -269,7 +284,7 @@ this is where you can view logs under activity logs
 export the activity logs
 
 <details>
-    <summary>Creating Monitor Images</summary>
+    <summary>Images: Creating Monitor</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9fcfe27a-413a-4334-b06a-6da1d8516d40" height="200%" width="200%" alt="1Monitor-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/59621859-dcd4-4e18-9e74-c0eece3f4d3d" height="200%" width="200%" alt="2Diagnostic-settings-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/a564c58b-b277-4e00-9c56-bfd6fbf57be3" height="200%" width="200%" alt="3Diagnostic-setting-Microsoft-Azure"/>
@@ -289,7 +304,7 @@ create a key vault
 diagnostic settings  create one -- DS azure key vault send it to analytic workspace
 
 <details>
-    <summary>Creating Diagnostic Settings Azure Key Vault Images</summary>
+    <summary>Images: Creating Diagnostic Settings Azure Key Vault</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/d426e6a7-552d-454f-9108-ba1aa1b969e2" height="200%" width="200%" alt="1KeyVault-SOC1-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/4e5b3e46-d6a0-43cd-97ec-f12e0761aa17" height="200%" width="200%" alt="2Diagnostic-setting-Microsoft-Azure"/>
 </details>
@@ -297,7 +312,7 @@ diagnostic settings  create one -- DS azure key vault send it to analytic worksp
 generate secrets -- this is for one incident -- we will generate by showing secret 11 times
 
 <details>
-    <summary>Generating Secrets Images</summary>
+    <summary>Images: Generating Secrets</summary>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/45f93770-c559-4ee0-a585-c4096c20dc90" height="200%" width="200%" alt="1KeyVault-SOC1-Microsoft-Azure"/>
         <img src="https://github.com/hoangannnhhh/SIEM-reports/assets/117109586/9d718be7-c618-448e-9f37-5b528a2a70fb" height="200%" width="200%" alt="2Create-a-secret-Microsoft-Azure"/>
 </details>
