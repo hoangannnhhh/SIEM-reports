@@ -1,4 +1,4 @@
-# Honeynet Build
+ # Honeynet Build
 
 ## Overview  
 This README provies a step-by-step guide on how to set up a honeynet using Windows 10 and Linux virtual machines on Azure. There will be additional images and videos in each section for references. A honeynet is a network of intentionally vulnerable systems designed to attract and monitor malicious activities, allowing for the analysis of cyber threats in a controlled environment.  
@@ -36,7 +36,7 @@ This README provies a step-by-step guide on how to set up a honeynet using Windo
 <p align="center">
 <img src="https://i.imgur.com/8iaZpsK.png" height="200%" width="200%" alt="Creating Windows VM part 1 - Basics tab"/>
 </p>
--->
+-->  
 
 **Configuring Linux Ubuntu VM**  
 1) Navigate to Azure portal, select new Virtual Machine.
